@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Indice HTML</title>
+</head>
+<body>
+	<h1>Indice, Ayuda</h1>
+	<h2 th:text=${hola}></h2>
+	<h2 th:text=${hola2}></h2>
+	
+	<br/>
+	<h2>Maquinas:</h2>
+	<br/>
+	<!-- Nombre: <span th:text="${maquina.nombre}"></span>
+	<br/>
+	Utilidad: <span th:text="${maquina.utilidad}"></span>
+	<br/>
+	Sector: <span th:text="${maquina.sector}"></span>
+	 -->
+	<div th:if="${not #lists.isEmpty(maquinas)}">
+		<table border="2">
+			<tr>
+				<th>Nombre</th>
+				<th>Utilidad</th>
+				<th>Sector</th>
+			</tr>
+			
+			<tr th:each="maquina : ${maquinas}">
+				<td th:text="${maquina.nombre}"></td>
+				<td th:text="${maquina.utilidad}"></td>
+				<td th:text="${maquina.sector}"></td>
+			</tr>
+			
+		</table>
+	</div>
+	 
+	<div th:if="${#lists.isEmpty(maquinas)}">
+		La lista está vacia
+	</div>
+	
+</body>
+</html>
