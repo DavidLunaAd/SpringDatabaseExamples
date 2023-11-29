@@ -57,6 +57,7 @@ public class MaquinaController {
 		
 		//BeanUtils.copyProperties(maquinaDetails, maquina.get()); alternativa a los siguiente
 		
+		
 		maquina.get().setNombre(maquinaDetails.getNombre());
 		maquina.get().setUtilidad(maquinaDetails.getUtilidad());
 		maquina.get().setSector(maquinaDetails.getSector());
